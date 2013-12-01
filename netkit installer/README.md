@@ -10,6 +10,7 @@ e.g.:
 sh netkit-installer.sh
 ###### or
 chmod +x netkit-installer.sh
+
 ./netkit-installer.sh
 
 ##### curl, wget, tar are required
