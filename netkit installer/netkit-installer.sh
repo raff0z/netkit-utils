@@ -39,7 +39,10 @@ install()
     echo "####" >> .bashrc
   else
     echo
-    echo "NETKIT_HOME is already setted, if running version is different please check it manually"
+    cat .bashrc > .bashrc.bak
+    sed '0,/NETKIT_HOME=[^=]*$/s||NETKIT_HOME='$HOME/netkit'|' .bashrc > tmp
+    mv tmp .bashrc
+    echo "updated NETKIT_HOME and backed up .bashrc to .bashrc.bak"
   fi
 
   cd $current
